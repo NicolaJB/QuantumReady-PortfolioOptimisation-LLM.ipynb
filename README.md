@@ -1,6 +1,6 @@
 # RL Portfolio Optimiser
 
-A practical demonstration of using **Reinforcement Learning (PPO)** and **Modern Portfolio Theory (Markowitz)** to optimise a financial portfolio of equities. This project simulates a portfolio management scenario using a custom OpenAI Gym environment and compares classical optimisation with a modern RL-based strategy.
+A practical demonstration of using **Reinforcement Learning (Proximal Policy Optimisation)** and **Modern Portfolio Theory (Markowitz)** to optimise a financial portfolio of equities. This project simulates a portfolio management scenario using a custom OpenAI Gym environment and compares classical optimisation with a modern RL-based strategy.
 
 Built as a portfolio project for Applied AI / ML roles in finance, particularly aligned with roles involving NLP, RL, time-series, and production ML systems.
 
