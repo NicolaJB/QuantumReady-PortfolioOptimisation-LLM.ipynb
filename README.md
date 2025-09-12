@@ -22,25 +22,25 @@ portfolio-optimisation-llm-risk/
 ```
 
 ## Quick Start
-1. **Clone the repository**  
-   ```bash
-   git clone https://github.com/yourusername/portfolio-optimisation-llm-risk.git
-   cd portfolio-optimisation-llm-risk
+
+1. **Download the notebook**  
+   Save `PortfolioOptimisation-LLMDerived-RiskScores.ipynb` from this repository to your local machine or open it directly in Google Colab.
+
+2. **Open in Jupyter or Colab**  
+   Launch the notebook in your preferred environment.
+
+3. **Run the first cell to install dependencies**
+   
+   The first cell installs the required Python packages automatically:
+   ```python
+   !pip install yfinance pandas numpy matplotlib scipy transformers
    ```
-2. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-Requires Python ≥3.11, yfinance, pandas, numpy, matplotlib, scipy, transformers.
-
-3. Open the notebook
-- Launch Jupyter or Google Colab and run Portfolio-Optimisation-LLM-RiskScores.ipynb.
-
-4. Configure tickers and risk documents
+   Requires Python ≥3.11, yfinance, pandas, numpy, matplotlib, scipy, transformers.
+   
+4. **Configure tickers and risk documents**
 - In the first cell, edit the tickers list or documents dictionary to match your own portfolio universe.
 
-5. Run all cells
+5. **Run all cells**
 The notebook will:
 - Download historical price data
 - Compute returns and covariance matrix
