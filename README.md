@@ -1,16 +1,30 @@
 # Portfolio Optimisation with LLM-Derived Risk Scores
 
 ## Overview
-This repository demonstrates how language-model-derived risk scores can augment classical portfolio optimisation. It replaces traditional expected returns with document-driven risk metrics to minimise portfolio variance while maintaining strong expected outcomes under Modern Portfolio Theory (MPT) principles.
+This repository demonstrates how language-model-derived risk scores can augment classical portfolio optimisation. Traditional expected returns are replaced with document-driven risk metrics, enabling variance minimisation while maintaining expected outcomes under Modern Portfolio Theory (MPT) principles.
 
-It is intended as a teaching and prototype example for teams exploring how LLMs can enrich regulated financial decision-making with transparent, audit-ready outputs.
+### This version:  
+- Reads like a professional **prototype/portfolio repo**.  
+- Emphasises LLM integration, auditability, reproducibility, and backtesting.  
+- Keeps headings, tables, and code blocks for clarity.  
+- Highlights technical impact without overloading the body text.  
+
+The project also serves as a teaching and prototype example for exploring how LLMs can enhance transparent, audit-ready financial decision-making workflows.
 
 ## Features
-- LLM-driven risk scoring: generate per-stock risk scores from textual risk factors.
-- Portfolio optimisation: minimise variance under allocation constraints.
-- Audit-ready outputs: structured logs of risk scores and optimised weights.
-- Visualisation: clear plots of allocation strategy for stakeholders.
-- Fully reproducible: end-to-end workflow in a single notebook.
+- LLM-driven risk scoring: generate per-stock risk scores from textual risk factors
+- Portfolio optimisation: minimise variance under allocation constraints
+- Audit-ready outputs: structured logs of risk scores and optimised weights
+- Visualisation: clear plots of portfolio allocation suitable for stakeholder review
+- Reproducible workflow: end-to-end pipeline contained in a single notebook
+
+## Technical Highlights
+- Replaces traditional expected returns with LLM-derived weighted risk scores
+- Optimises portfolio allocations with constraints on diversification
+- Backtests portfolio performance on out-of-sample data to produce Sharpe ratios and drawdown metrics
+- Generates audit-ready logs for compliance tracking
+- Produces visualisations of portfolio allocations and expected risk
+- Demonstrates integration of modern NLP and classical quantitative finance pipelines
 
 ## Repository Structure
 ```bash
@@ -41,39 +55,53 @@ portfolio-optimisation-llm-risk/
 - In the first cell, edit the tickers list or documents dictionary to match your own portfolio universe.
 
 5. **Run all cells**
-The notebook will:
-- Download historical price data
-- Compute returns and covariance matrix
-- Generate risk scores via a language model
-- Optimise portfolio weights
+The notebook performs the following steps:
+- Download historical stock prices
+- Compute daily returns and covariance matrix
+- Generate LLM risk scores for each stock
+- Optimise portfolio weights under diversification constraints
+- Backtest portfolio performance on out-of-sample data
 - Log structured outputs for audit
-- Plot optimised allocations
+- Visualise portfolio allocations
 
-## Outputs
-Audit Log Table:
+6. Outputs
+```
+| Ticker | LLM_Risk_Score | Optimised_Weight |
+| ------ | -------------- | ---------------- |
+| AAPL   | 0.000857       | 11.2%            |
+| GOOGL  | 0.997363       | 32.6%            |
+| MSFT   | 0.080955       | 13.9%            |
+| AMZN   | 0.997703       | 35.8%            |
+| TSLA   | 0.999336       | 6.5%             |
+```
+**Example Portfolio Weights Allocation & Performance Charts**: 
 
-Ticker | LLM_Risk_Score | Optimised_Weight
+A bar chart visualises the fraction of capital allocated to each stock according to variance minimisation.  
 
-**Example Portfolio Weights Allocation Chart**  
-![Portfolio Weights](images/portfolio_weights.png)  
+![Portfolio Weights](images/portfolio_weights.png)
 
-These outputs are suitable for presentations, stakeholder reviews, or compliance documentation.
+Portfolio performance plot visualises confirmation of portfolio growth, stability, and risk.
 
-## Interpretation Guide
-- LLM Risk Score: 0 = low risk (positive sentiment), 1 = high risk (negative sentiment).
-- Optimised Weight: Fraction of capital allocated to each stock under variance minimisation.
-- Portfolio Variance: Total risk metric from the covariance matrix given chosen weights.
+![Portfolio Performance](images/portfolio_performance.png)
 
-## Data and Compliance Note
-This project uses publicly available market data (Yahoo Finance) and synthetic sample documents for risk scoring. No confidential or personally identifiable information is included. It is provided for demonstration and educational purposes only.
+### Interpretation Guide
+- LLM Risk Score: 0 = low risk (positive sentiment), 1 = high risk (negative sentiment)
+- Optimised Weight: fraction of capital allocated to each stock
+- Portfolio Variance: total risk metric based on covariance matrix given chosen weights
+- Portfolio Sharpe Ratio: measure of risk-adjusted performance, computed on full and out-of-sample periods
 
-## Technologies
+### Data and Compliance
+- Uses publicly available market data (Yahoo Finance) and synthetic sample documents
+- No confidential or personally identifiable information is included
+- Provided for demonstration and educational purposes only
+
+### Technologies
 - Python 3.11
-- yfinance – historical stock data
-- NumPy / Pandas – data processing
-- SciPy – optimisation
-- Matplotlib – visualisation
-- Hugging Face Transformers – LLM inference
+- yfinance for historical stock data
+- NumPy and Pandas for data processing
+- SciPy for optimisation
+- Matplotlib for visualisation
+- Hugging Face Transformers for LLM inference
 
 ## Licence
 MIT Licence. See the LICENCE file for details.
