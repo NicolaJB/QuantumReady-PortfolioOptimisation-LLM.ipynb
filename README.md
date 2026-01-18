@@ -1,7 +1,15 @@
-# Classical Portfolio Optimisation with LLM-Derived Risk Scores (Quantum-Ready Prototype)
+# Quantum-Ready Portfolio Optimisation with LLM-Derived Risk Scores (Classical Prototype)
 
 ## Overview
-This repository demonstrates how language-model-derived risk scores can augment classical portfolio optimisation. Traditional expected returns are replaced with document-driven risk metrics, enabling variance minimisation while maintaining expected outcomes under Modern Portfolio Theory (MPT) principles. The pipeline is implemented classically but structured to support future experimentation with quantum-inspired or quantum ML approaches.
+This repository implements a classical portfolio optimisation workflow where traditional expected returns are replaced with LLM-derived weighted risk scores. The objective is to minimise portfolio variance while maintaining strong risk-adjusted expected returns, following Modern Portfolio Theory (MPT) principles. The notebook is designed as a modular, end-to-end prototype demonstrating all the steps needed for quantitative portfolio workflows:
+- Data ingestion and preprocessing for multiple instruments
+- Feature engineering and LLM-driven risk scoring
+- Variance-based portfolio optimisation under diversification constraints
+- Backtesting with out-of-sample evaluation
+- Structured, audit-ready outputs for compliance and reproducibility
+
+### Quantum-Ready Design
+Although currently classical, the pipeline is quantum-ready: any component, particularly risk scoring or optimisation, can be replaced with quantum or hybrid classical–quantum methods without rebuilding the workflow. This makes it a practical sandbox for experimentation with quantum-enhanced portfolio allocation, variational circuits, or other quantum ML approaches.
 
 ### This version:  
 - Reads like a professional **prototype/portfolio repo**.  
